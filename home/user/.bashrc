@@ -122,9 +122,23 @@ export PATH=~/.config/composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sb
 # noma's customize
 
 ## hub install
-hub help  > /dev/null || {
+hub help > /dev/null || {
   echo "hubコマンドをインストールします。"
   sudo add-apt-repository ppa:cpick/hub -y
   sudo apt update
   sudo apt install hub -y
 }
+
+## pyenv init and install
+PYENV_ROOT="${HOME}/.pyenv/bin"
+PATH="${PATH}:${PYENV_ROOT}"
+pyenv --version > /dev/null || {
+  git clone https://github.com/pyenv/pyenv ${HOME}/.pyenv
+  sudo ${HOME}/.pyenv/plugins/python-build/install.sh
+  pyenv install 3.7.2
+  pyenv rehash
+  pyenv global 3.7.2
+}
+eval "$(pyenv init -)"
+
+## neovim install
