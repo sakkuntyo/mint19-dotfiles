@@ -162,5 +162,6 @@ nvim --version > /dev/null || {
   sudo apt-get install neovim -y
   mkdir -p ${XDG_CONFIG_HOME}/nvim
   touch ${XDG_CONFIG_HOME}/nvim/init.vim
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 pip install neovim
