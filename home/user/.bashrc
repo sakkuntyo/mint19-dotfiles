@@ -150,8 +150,8 @@ goenv --version > /dev/null || {
   goenv rehash
   goenv global 1.13.5
 }
-PATH="${PATH}:${GOPATH}/bin"
 eval "$(goenv init -)"
+PATH="${PATH}:${GOPATH}/bin"
 
 ## neovim init and install
 XDG_CONFIG_HOME="${HOME}/.config"
