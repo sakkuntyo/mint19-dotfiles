@@ -144,14 +144,13 @@ eval "$(pyenv init -)"
 ## goenv init and install
 GOENV_ROOT="${HOME}/.goenv"
 PATH="${PATH}:${GOENV_ROOT}/bin"
-GOPATH="${HOME}/go"
-PATH="${PATH}:${GOPATH}/bin"
 goenv --version > /dev/null || {
   git clone https://github.com/syndbg/goenv.git "${HOME}/.goenv"
   goenv install 1.13.5
   goenv rehash
   goenv global 1.13.5
 }
+PATH="${PATH}:${GOPATH}/bin"
 eval "$(goenv init -)"
 
 ## neovim init and install
