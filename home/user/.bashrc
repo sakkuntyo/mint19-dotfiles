@@ -122,7 +122,7 @@ export PATH=~/.config/composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sb
 # noma's customize
 
 ## hub install
-hub > /dev/null || {
+hub help  > /dev/null || {
   echo "hubコマンドをインストールします。"
   sudo add-apt-repository ppa:cpick/hub -y
   sudo apt update
