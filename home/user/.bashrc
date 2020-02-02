@@ -117,3 +117,14 @@ if ! shopt -oq posix; then
 fi
 [ -r /home/noma/.byobu/prompt ] && . /home/noma/.byobu/prompt   #byobu-prompt#
 export PATH=~/.config/composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+
+# noma's customize
+
+## hub install
+hub > /dev/null || {
+  echo "hubコマンドをインストールします。"
+  sudo add-apt-repository ppa:cpick/hub -y
+  sudo apt update
+  sudo apt install hub -y
+}
