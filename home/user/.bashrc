@@ -141,12 +141,14 @@ pyenv --version > /dev/null || {
 }
 eval "$(pyenv init -)"
 
-## neovim install
+## neovim init and install
+XDG_CONFIG_HOME="${HOME}/.config"
+XDG_CACHE_HOME="${HOME}/.cache"
 nvim --version > /dev/null || {
   sudo add-apt-repository ppa:neovim-ppa/stable -y
   sudo apt-get update
   sudo apt-get install neovim -y
+  mkdir -p ${XDG_CONFIG_HOME}/nvim
+  touch ${XDG_CONFIG_HOME}/nvim/init.vim
 }
-XDG_CONFIG_HOME="${HOME}/.config"
-XDG_CACHE_HOME="${HOME}/.cache"
 pip install neovim
